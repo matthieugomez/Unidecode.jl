@@ -1,5 +1,10 @@
-# LatexDecode.jl
-Transform unicode corresponding to Latex or emoji to UTF-8. 
+# Unidecode.jl
+This package transforms the Unicode strings created by Latex or Emoji autocompletion back to UTF-8. 
+This package is useful to save your data with a UTF-8 encoding.
 ```julia
-decode(α)
+using Unideecode
+unidecode("α")
+#> "alpha"
+unidecode("🍫")
+#> ":chocolate_bar:"
 ```
