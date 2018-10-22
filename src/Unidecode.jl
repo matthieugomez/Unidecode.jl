@@ -1,12 +1,6 @@
 module Unidecode
-    emoji_file = joinpath(JULIA_BINDIR, "..", "share", "julia", "base", "repl", "emoji_symbols.jl")
-    latex_file = joinpath(JULIA_BINDIR, "..", "share", "julia", "base", "repl", "latex_symbols.jl")
-    if !isfile(emoji_file)
-        emoji_file = joinpath(JULIA_BINDIR, "..", "share", "julia", "base", "emoji_symbols.jl")
-        latex_file = joinpath(JULIA_BINDIR, "..", "share", "julia", "base", "latex_symbols.jl")
-    end
-    include(emoji_file)
-    include(latex_file)
+    include(joinpath(Sys.BINDIR, "..", "share", "julia", "stdlib", "v1.0", "REPL", "src", "emoji_symbols.jl"))
+    include(joinpath(Sys.BINDIR, "..", "share", "julia", "stdlib", "v1.0", "REPL", "src", "latex_symbols.jl"))
     const emoji_symbols_reverse = Dict((v => k) for (k, v) in emoji_symbols)
     const latex_symbols_reverse = Dict((v => k) for (k, v) in latex_symbols)
     function unidecode(x::String)

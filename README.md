@@ -13,5 +13,6 @@ unidecode("🍫")
 ## Install
 
 ```julia
-Pkg.clone("https://github.com/matthieugomez/Unidecode.jl")
+using Pkg
+Pkg.add("https://github.com/matthieugomez/Unidecode.jl")
 ```
