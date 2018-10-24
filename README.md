@@ -1,7 +1,8 @@
 # Unidecode.jl
-This package transforms the Unicode strings created by Latex or Emoji autocompletion back to UTF-8. 
+This package convers the Unicode strings created by Latex or Emoji autocompletion back to the original UTF-8 string. 
+You may want to use it before writing your data in a CSV file, so that it can be read by softwares that do not handle Unicode.
 
-You may want to use it before saving your data to a CSV file, so that it can be read by softwares that do not handle Unicode.
+## Examples
 ```julia
 using Unidecode
 unidecode("α")
@@ -14,5 +15,5 @@ unidecode("🍫")
 
 ```julia
 using Pkg
-Pkg.add("https://github.com/matthieugomez/Unidecode.jl")
+Pkg.add("Unidecode")
 ```
