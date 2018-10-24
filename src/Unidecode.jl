@@ -1,8 +1,7 @@
 module Unidecode
-    include(joinpath(Sys.BINDIR, "..", "share", "julia", "stdlib", "v1.0", "REPL", "src", "emoji_symbols.jl"))
-    include(joinpath(Sys.BINDIR, "..", "share", "julia", "stdlib", "v1.0", "REPL", "src", "latex_symbols.jl"))
-    const emoji_symbols_reverse = Dict((v => k) for (k, v) in emoji_symbols)
-    const latex_symbols_reverse = Dict((v => k) for (k, v) in latex_symbols)
+    using REPL
+    const emoji_symbols_reverse = Dict((v => k) for (k, v) in REPL.REPLCompletions.emoji_symbols)
+    const latex_symbols_reverse = Dict((v => k) for (k, v) in REPL.REPLCompletions.latex_symbols)
     function unidecode(x::String)
         if x ∈ keys(emoji_symbols_reverse)
             emoji_symbols_reverse[x][2:end]
