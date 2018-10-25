@@ -1,16 +1,15 @@
 module Unidecode
     using REPL
-    
-    const emoji_symbols_reverse = Dict((v => k) for (k, v) in REPL.REPLCompletions.emoji_symbols)
-    const latex_symbols_reverse = Dict((v => k) for (k, v) in REPL.REPLCompletions.latex_symbols)
-    function unidecode(x::String)
-        if x ∈ keys(emoji_symbols_reverse)
-            emoji_symbols_reverse[x][2:end]
-        elseif x ∈ keys(latex_symbols_reverse)
-            latex_symbols_reverse[x][2:end]
-        else
-            x
-        end
+    const emoji_dict = Dict((v => k) for (k, v) in REPL.REPLCompletions.emoji_symbols)
+    function decode_emoji(x)
+        x ∈ keys(emoji_dict) ? emoji_dict[x][2:end] : x
     end
-    export unidecode
+    const latex_dict = Dict((v => k) for (k, v) in REPL.REPLCompletions.latex_symbols)
+    function decode_latex(x)
+          x ∈ keys(latex_dict) ? latex_dict[x][2:end] : x
+    end
+    function unidecode(x)
+        decode_emoji(decode_latex(x))
+    end
+    export unidecode, decode_emoji, decode_latex
 end
