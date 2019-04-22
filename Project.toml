@@ -1,5 +1,6 @@
 name = "Unidecode"
 uuid = "967fb449-e509-55aa-8007-234b4096b967"
+version = "1.0.2"
 
 [deps]
 REPL = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
