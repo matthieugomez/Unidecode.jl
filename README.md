@@ -14,9 +14,5 @@ unidecode("🍫")
 #> ":chocolate_bar:"
 ```
 
-## Install
-
-```julia
-using Pkg
-Pkg.add("Unidecode")
-```
+## Installation
+The package is registered in the [`General`](https://github.com/JuliaRegistries/General) registry and so can be installed at the REPL with `] add Unidecode`.
