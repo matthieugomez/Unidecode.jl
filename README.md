@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/matthieugomez/Unidecode.jl.svg?branch=master)](https://travis-ci.org/matthieugomez/Unidecode.jl)
+[![Build Status](https://travis-ci.com/matthieugomez/Unidecode.jl.svg?branch=master)](https://travis-ci.org/matthieugomez/Unidecode.jl)
 
 
 # Unidecode.jl
