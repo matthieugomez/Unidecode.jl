@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/matthieugomez/Unidecode.jl.svg?branch=master)](https://travis-ci.org/matthieugomez/Unidecode.jl)
+[![Build status](https://github.com/matthieugomez/Unidecode.jl/workflows/CI/badge.svg)](https://github.com/matthieugomez/Unidecode.jl/actions)
 
 
 # Unidecode.jl
