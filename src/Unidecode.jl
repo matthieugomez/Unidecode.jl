@@ -1,10 +1,11 @@
 module Unidecode
-    using REPL, Unicode
-    const emoji_dict = Dict((v => k) for (k, v) in REPL.REPLCompletions.emoji_symbols)
+    using REPL: REPLCompletions
+    using Unicode: graphemes
+    const emoji_dict = Dict((v => k) for (k, v) in REPLCompletions.emoji_symbols)
     function decode_emoji(x)
         string((c ∈ keys(emoji_dict) ? emoji_dict[c][2:end] : c for c in graphemes(x))...)
     end
-    const latex_dict = Dict((v => k) for (k, v) in REPL.REPLCompletions.latex_symbols)
+    const latex_dict = Dict((v => k) for (k, v) in REPLCompletions.latex_symbols)
     function decode_latex(x)
         string((c ∈ keys(latex_dict) ? latex_dict[c][2:end] : c for c in graphemes(x))...)
     end
