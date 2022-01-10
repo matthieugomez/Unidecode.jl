@@ -12,5 +12,5 @@ module Unidecode
     function unidecode(x)
         decode_emoji(decode_latex(x))
     end
-    export unidecode, decode_emoji, decode_latex
+    export decode_emoji, decode_latex, unidecode
 end
